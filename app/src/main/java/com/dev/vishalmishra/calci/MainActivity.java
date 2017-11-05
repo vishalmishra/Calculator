@@ -96,12 +96,18 @@ public class MainActivity extends AppCompatActivity {
         updateScreen();
     }
     public void onClickBack(View v){
+        try{
         StringBuilder stringBuilder=new StringBuilder(display);
         if(isOperator(stringBuilder.charAt(stringBuilder.length()-1)))
             currentOperator="";
         stringBuilder.deleteCharAt(stringBuilder.length()-1);
         display=stringBuilder.toString();
         tv.setText(display);
+        if(textview.getText()!="")
+            textview.setText("");
+        }
+        catch (Exception e){
+            return;}
     }
     public void onClickSign(View v){
         if(currentOperator==""){
