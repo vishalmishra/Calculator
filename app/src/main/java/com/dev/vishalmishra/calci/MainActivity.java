@@ -46,13 +46,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isOperator(char op){
-        switch (op){
-            case '+':
-            case '-':
-            case '*':
-            case '/':return true;
-            default: return false;
-        }
+        if(op!='+'&&op!='-'&&op!='*'&&op!='/')return false;
+        return true;
+        
     }
 
     public void onClickOperator(View v){
